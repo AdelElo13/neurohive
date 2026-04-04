@@ -1,11 +1,11 @@
 {
-  "name": "@adel13/hive-mind",
-  "version": "1.0.1",
+  "name": "neurohive",
+  "version": "1.0.0",
   "description": "Multi-agent memory intelligence layer — shared knowledge, expertise tracking, and conflict detection for AI agent teams",
   "type": "module",
   "main": "dist/index.js",
   "bin": {
-    "hive-mind": "bin/cli.mjs"
+    "neurohive": "bin/cli.mjs"
   },
   "files": [
     "dist",
@@ -33,7 +33,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/AdelElo13/hive-mind.git"
+    "url": "https://github.com/AdelElo13/neurohive.git"
   },
   "engines": {
     "node": ">=18"

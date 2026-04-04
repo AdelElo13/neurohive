@@ -1,20 +1,20 @@
-# hive-mind
+# neurohive
 
 Multi-agent memory intelligence — shared knowledge, expertise tracking, and conflict detection for AI agent teams.
 
-![npm version](https://img.shields.io/npm/v/@adel13/hive-mind)
-![license](https://img.shields.io/npm/l/@adel13/hive-mind)
-![node](https://img.shields.io/node/v/@adel13/hive-mind)
+![npm version](https://img.shields.io/npm/v/neurohive)
+![license](https://img.shields.io/npm/l/neurohive)
+![node](https://img.shields.io/node/v/neurohive)
 
 ## Why
 
 AI agents in teams forget everything and don't share knowledge. Multiple agents working on the same project re-discover the same facts, contradict each other, and have no collective memory. One agent learns the API timeout is 30 seconds; another assumes 60. Both conclusions sit in separate sessions, never compared.
 
-**hive-mind** wraps neuromcp with a shared intelligence layer. Every memory stored by any agent becomes visible to the team. Searches come back annotated with who discovered what and when. New agents onboard with the team's existing knowledge already loaded. Contradictions get flagged before they cause incidents.
+**neurohive** wraps neuromcp with a shared intelligence layer. Every memory stored by any agent becomes visible to the team. Searches come back annotated with who discovered what and when. New agents onboard with the team's existing knowledge already loaded. Contradictions get flagged before they cause incidents.
 
 ## Before & After
 
-| | neuromcp alone | With hive-mind |
+| | neuromcp alone | With neurohive |
 |---|---|---|
 | Agent knowledge | Isolated per session | Shared across team, attributed |
 | Search results | Raw results | Annotated with "discovered by Agent-X, 3 min ago" |
@@ -26,10 +26,10 @@ AI agents in teams forget everything and don't share knowledge. Multiple agents 
 ## Quick Start
 
 ```
-npx @adel13/hive-mind
+npx neurohive
 ```
 
-Drop-in replacement for `npx neuromcp`. Use the same MCP config — just swap the command. All neuromcp tools and resources are available unchanged, plus three new hive-mind tools, five new resources, and automatic cross-agent annotation.
+Drop-in replacement for `npx neuromcp`. Use the same MCP config — just swap the command. All neuromcp tools and resources are available unchanged, plus three new neurohive tools, five new resources, and automatic cross-agent annotation.
 
 ## Features
 
@@ -43,11 +43,11 @@ When an agent starts up, it reads the `hivemind://priming` resource to load the 
 
 ### Expertise Tracking
 
-Every time an agent stores a memory, hive-mind updates that agent's expertise profile — tracking which categories they contribute to most. Use `hivemind_expertise` to route questions: "who knows the most about authentication?"
+Every time an agent stores a memory, neurohive updates that agent's expertise profile — tracking which categories they contribute to most. Use `hivemind_expertise` to route questions: "who knows the most about authentication?"
 
 ### Conflict Detection
 
-When two agents store contradictory claims about the same fact, hive-mind flags it as a conflict. Conflicts surface in `hivemind_conflicts` and in the dashboard so the team can resolve them explicitly rather than letting stale data propagate silently.
+When two agents store contradictory claims about the same fact, neurohive flags it as a conflict. Conflicts surface in `hivemind_conflicts` and in the dashboard so the team can resolve them explicitly rather than letting stale data propagate silently.
 
 ### Dashboard
 
@@ -60,9 +60,9 @@ A single command gives a live view of the collective knowledge base: total memor
 ```json
 {
   "mcpServers": {
-    "hive-mind": {
+    "neurohive": {
       "command": "npx",
-      "args": ["@adel13/hive-mind"],
+      "args": ["neurohive"],
       "env": {
         "HIVEMIND_COMPANY": "my-project",
         "HIVEMIND_AGENT": "Agent-Backend",
@@ -78,9 +78,9 @@ A single command gives a live view of the collective knowledge base: total memor
 ```json
 {
   "mcpServers": {
-    "hive-mind": {
+    "neurohive": {
       "command": "npx",
-      "args": ["-y", "@adel13/hive-mind"],
+      "args": ["-y", "neurohive"],
       "env": {
         "HIVEMIND_COMPANY": "my-project",
         "HIVEMIND_AGENT": "Agent-Frontend"
@@ -95,9 +95,9 @@ A single command gives a live view of the collective knowledge base: total memor
 ```json
 {
   "mcpServers": {
-    "hive-mind": {
+    "neurohive": {
       "command": "npx",
-      "args": ["@adel13/hive-mind"],
+      "args": ["neurohive"],
       "env": {
         "HIVEMIND_COMPANY": "my-project",
         "HIVEMIND_AGENT": "Cursor-Agent"
@@ -109,7 +109,7 @@ A single command gives a live view of the collective knowledge base: total memor
 
 ### Paperclip Mode
 
-When [Paperclip](https://github.com/paperclipai/paperclip) is running locally, hive-mind detects it automatically and reads the company, agent, and role from the Paperclip API. No extra env vars needed — the company namespace is set from the active Paperclip company, and each agent is identified by its Paperclip identity.
+When [Paperclip](https://github.com/paperclipai/paperclip) is running locally, neurohive detects it automatically and reads the company, agent, and role from the Paperclip API. No extra env vars needed — the company namespace is set from the active Paperclip company, and each agent is identified by its Paperclip identity.
 
 Manual fallback (when Paperclip is not running):
 
@@ -124,15 +124,15 @@ HIVEMIND_AGENT_ROLE=backend
 
 | Command | Description |
 |---------|-------------|
-| `hive-mind` | Start as MCP server (stdio) |
-| `hive-mind dashboard` | Print team knowledge dashboard |
-| `hive-mind expertise [topic\|agent_id]` | Show expertise map or look up a topic/agent |
-| `hive-mind conflicts [--all]` | List unresolved conflicts (--all includes resolved) |
-| `hive-mind doctor` | Health check: DB path, agent config, Paperclip status |
+| `neurohive` | Start as MCP server (stdio) |
+| `neurohive dashboard` | Print team knowledge dashboard |
+| `neurohive expertise [topic\|agent_id]` | Show expertise map or look up a topic/agent |
+| `neurohive conflicts [--all]` | List unresolved conflicts (--all includes resolved) |
+| `neurohive doctor` | Health check: DB path, agent config, Paperclip status |
 
 ## Configuration
 
-### hive-mind variables
+### neurohive variables
 
 | Variable | Default | Description |
 |----------|---------|-------------|
@@ -156,7 +156,7 @@ All `NEUROMCP_*` environment variables pass through unchanged. Key ones:
 
 ## MCP Surface
 
-hive-mind exposes 16 tools, 18 resources, and 3 prompts.
+neurohive exposes 16 tools, 18 resources, and 3 prompts.
 
 ### Tools
 
@@ -178,7 +178,7 @@ hive-mind exposes 16 tools, 18 resources, and 3 prompts.
 | `query_graph` | Traverse knowledge graph |
 | `search_claims` | Search atomic extracted claims |
 
-**3 hive-mind tools:**
+**3 neurohive tools:**
 
 | Tool | Description |
 |------|-------------|
@@ -188,7 +188,7 @@ hive-mind exposes 16 tools, 18 resources, and 3 prompts.
 
 ### Resources
 
-**13 neuromcp resources** (memory, graph, priming, stats) plus **5 hive-mind resources:**
+**13 neuromcp resources** (memory, graph, priming, stats) plus **5 neurohive resources:**
 
 | Resource URI | Description |
 |---|---|
@@ -204,13 +204,13 @@ hive-mind exposes 16 tools, 18 resources, and 3 prompts.
 
 ## Paperclip Integration
 
-hive-mind probes `HIVEMIND_PAPERCLIP_URL` on startup. If the Paperclip API responds:
+neurohive probes `HIVEMIND_PAPERCLIP_URL` on startup. If the Paperclip API responds:
 
 1. **Namespace** is set to `company-<companyId>` — all agents on the same Paperclip company share one knowledge base.
 2. **Agent identity** is read from the Paperclip agent record, so each agent in a fleet is automatically identified.
 3. **Role** is pulled from the agent definition, used to enrich priming context ("you are the backend agent; here's what your team knows").
 
-If Paperclip is not running, hive-mind falls back to `HIVEMIND_COMPANY` / `HIVEMIND_AGENT` env vars with no loss of functionality.
+If Paperclip is not running, neurohive falls back to `HIVEMIND_COMPANY` / `HIVEMIND_AGENT` env vars with no loss of functionality.
 
 ## Requirements
 
@@ -233,7 +233,7 @@ If Paperclip is not running, hive-mind falls back to `HIVEMIND_COMPANY` / `HIVEM
 ## FAQ
 
 **Is this a replacement for neuromcp?**
-Yes and no. hive-mind runs on top of neuromcp and re-exports all its tools, resources, and prompts. If you run a single agent, it's functionally identical to neuromcp with a few extra tools. The value emerges with two or more agents sharing the same `HIVEMIND_COMPANY` namespace.
+Yes and no. neurohive runs on top of neuromcp and re-exports all its tools, resources, and prompts. If you run a single agent, it's functionally identical to neuromcp with a few extra tools. The value emerges with two or more agents sharing the same `HIVEMIND_COMPANY` namespace.
 
 **Do all agents share one database?**
 Yes — agents in the same company namespace share a database via the shared filesystem path (`NEUROMCP_DB_PATH`). This works naturally in multi-agent setups on the same machine (Paperclip, dmux, parallel Claude Code sessions). For distributed setups, point all agents to a shared NFS or networked path.
@@ -242,7 +242,7 @@ Yes — agents in the same company namespace share a database via the shared fil
 When two memories from different agents make contradictory claims about the same subject. Conflict detection runs at store time using the cognitive claims extracted from memory content. You can tune sensitivity or disable it via the neuromcp config.
 
 **Will it break my existing neuromcp setup?**
-No. hive-mind passes all existing `NEUROMCP_*` env vars through unchanged and writes to the same database. Switching back to `npx neuromcp` works at any time.
+No. neurohive passes all existing `NEUROMCP_*` env vars through unchanged and writes to the same database. Switching back to `npx neuromcp` works at any time.
 
 **How does priming work?**
 At startup, agents that read `hivemind://priming` receive a formatted summary: team size, top categories, most active agents, recent memories, and any open conflicts. This is designed to be included in a system prompt or read via a hook on session start.

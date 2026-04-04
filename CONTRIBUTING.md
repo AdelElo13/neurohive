@@ -1,10 +1,10 @@
-# Contributing to hive-mind
+# Contributing to neurohive
 
 ## Setup
 
 ```bash
-git clone https://github.com/AdelElo13/hive-mind.git
-cd hive-mind
+git clone https://github.com/AdelElo13/neurohive.git
+cd neurohive
 npm install
 ```
 

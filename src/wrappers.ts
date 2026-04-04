@@ -65,7 +65,7 @@ export async function hiveStore(
 }
 
 /**
- * Wraps neuromcp's searchMemory with hive-mind annotations.
+ * Wraps neuromcp's searchMemory with neurohive annotations.
  */
 export async function hiveSearch(
   input: SearchInput,

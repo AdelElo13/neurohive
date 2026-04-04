@@ -16,7 +16,7 @@ export function registerHiveTools(
 ): void {
   // ─── Tool 1: hivemind_status ─────────────────────────────────────
   server.registerTool('hivemind_status', {
-    description: 'Get the hive-mind dashboard: total memories, agents, categories, recent activity, and conflict count.',
+    description: 'Get the neurohive dashboard: total memories, agents, categories, recent activity, and conflict count.',
     inputSchema: {},
   }, () => {
     const data = getDashboardData(db, namespace);

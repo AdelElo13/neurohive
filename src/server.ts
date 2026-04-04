@@ -24,7 +24,7 @@ export function createHiveServer(deps: ServerDeps, hiveConfig: HiveConfig): McpS
   const { db, vecStore, embedder, config, logger, metrics } = deps;
 
   const server = new McpServer(
-    { name: 'hive-mind', version: '1.0.0' },
+    { name: 'neurohive', version: '1.0.0' },
     {
       capabilities: {
         resources: {},
@@ -38,7 +38,7 @@ export function createHiveServer(deps: ServerDeps, hiveConfig: HiveConfig): McpS
 
   // ─── Tool 1: store_memory (wrapped with hive intelligence) ───────
   server.registerTool('store_memory', {
-    description: 'Store a new memory with semantic deduplication, contradiction detection, surprise scoring, entity extraction, and hive-mind expertise tracking.',
+    description: 'Store a new memory with semantic deduplication, contradiction detection, surprise scoring, entity extraction, and neurohive expertise tracking.',
     inputSchema: {
       content: z.string().describe('The memory content to store'),
       namespace: z.string().optional().describe('Namespace to store in (default: config default)'),
@@ -62,7 +62,7 @@ export function createHiveServer(deps: ServerDeps, hiveConfig: HiveConfig): McpS
 
   // ─── Tool 2: search_memory (wrapped with hive annotations) ──────
   server.registerTool('search_memory', {
-    description: 'Search memories using hybrid vector + full-text search with RRF ranking, graph boost, cognitive priming, and hive-mind annotations.',
+    description: 'Search memories using hybrid vector + full-text search with RRF ranking, graph boost, cognitive priming, and neurohive annotations.',
     inputSchema: {
       query: z.string().describe('Search query text'),
       namespace: z.string().optional().describe('Namespace to search (default: config default)'),
@@ -244,12 +244,12 @@ export function createHiveServer(deps: ServerDeps, hiveConfig: HiveConfig): McpS
   registerResources(server, deps);
   registerPrompts(server, deps);
 
-  // ─── hive-mind tools and resources ───────────────────────────────
+  // ─── neurohive tools and resources ───────────────────────────────
   registerHiveTools(server, db, hiveConfig.defaultNamespace);
   registerHiveResources(server, db, hiveConfig.defaultNamespace);
 
-  logger.info('server', 'hive-mind MCP server created', {
-    tools: 16, // 13 neuromcp + 3 hive-mind
+  logger.info('server', 'neurohive MCP server created', {
+    tools: 16, // 13 neuromcp + 3 neurohive
     agent: agentId,
     namespace: hiveConfig.defaultNamespace,
   });

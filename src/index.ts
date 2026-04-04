@@ -54,7 +54,7 @@ async function runCli(command: string, args: string[]): Promise<void> {
 
     case 'doctor': {
       const paperclip = await detectPaperclip(config.paperclipUrl);
-      process.stdout.write('hive-mind doctor\n');
+      process.stdout.write('neurohive doctor\n');
       process.stdout.write(`  DB path:     ${config.dbPath}\n`);
       process.stdout.write(`  Namespace:   ${config.defaultNamespace}\n`);
       process.stdout.write(`  Agent:       ${config.hiveAgent || '(not set)'}\n`);
@@ -66,7 +66,7 @@ async function runCli(command: string, args: string[]): Promise<void> {
 
     default: {
       process.stderr.write(`Unknown command: ${command}\n`);
-      process.stderr.write('Usage: hive-mind [dashboard|expertise|conflicts|doctor]\n');
+      process.stderr.write('Usage: neurohive [dashboard|expertise|conflicts|doctor]\n');
       process.exitCode = 1;
     }
   }
@@ -77,7 +77,7 @@ async function startServer(): Promise<void> {
   const logger = createLogger({ level: hiveConfig.logLevel, format: hiveConfig.logFormat });
   const metrics = createMetrics();
 
-  logger.info('startup', 'Loading hive-mind v1.0.0', {
+  logger.info('startup', 'Loading neurohive v1.0.0', {
     dbPath: hiveConfig.dbPath,
     defaultNamespace: hiveConfig.defaultNamespace,
     agent: hiveConfig.hiveAgent,
@@ -115,7 +115,7 @@ async function startServer(): Promise<void> {
   const vecStore = new SqliteVecStore(embedder.dimensions);
   vecStore.initialize(db);
 
-  // Create hive-mind MCP server
+  // Create neurohive MCP server
   const server = createHiveServer(
     { db, vecStore, embedder, config: effectiveConfig, logger, metrics },
     effectiveConfig,
@@ -125,7 +125,7 @@ async function startServer(): Promise<void> {
   const transport = new StdioServerTransport();
   await server.connect(transport);
 
-  logger.info('startup', 'hive-mind MCP server running on stdio');
+  logger.info('startup', 'neurohive MCP server running on stdio');
 
   // Cleanup on exit
   const cleanup = (): void => {
