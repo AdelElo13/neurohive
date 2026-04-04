@@ -1,5 +1,5 @@
 {
-  "name": "hive-mind",
+  "name": "@adel13/hive-mind",
   "version": "1.0.0",
   "description": "Multi-agent memory intelligence layer — shared knowledge, expertise tracking, and conflict detection for AI agent teams",
   "type": "module",

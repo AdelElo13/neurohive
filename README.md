@@ -2,9 +2,9 @@
 
 Multi-agent memory intelligence — shared knowledge, expertise tracking, and conflict detection for AI agent teams.
 
-![npm version](https://img.shields.io/npm/v/hive-mind)
-![license](https://img.shields.io/npm/l/hive-mind)
-![node](https://img.shields.io/node/v/hive-mind)
+![npm version](https://img.shields.io/npm/v/@adel13/hive-mind)
+![license](https://img.shields.io/npm/l/@adel13/hive-mind)
+![node](https://img.shields.io/node/v/@adel13/hive-mind)
 
 ## Why
 
@@ -26,7 +26,7 @@ AI agents in teams forget everything and don't share knowledge. Multiple agents 
 ## Quick Start
 
 ```
-npx hive-mind
+npx @adel13/hive-mind
 ```
 
 Drop-in replacement for `npx neuromcp`. Use the same MCP config — just swap the command. All neuromcp tools and resources are available unchanged, plus three new hive-mind tools, five new resources, and automatic cross-agent annotation.
@@ -62,7 +62,7 @@ A single command gives a live view of the collective knowledge base: total memor
   "mcpServers": {
     "hive-mind": {
       "command": "npx",
-      "args": ["hive-mind"],
+      "args": ["@adel13/hive-mind"],
       "env": {
         "HIVEMIND_COMPANY": "my-project",
         "HIVEMIND_AGENT": "Agent-Backend",
@@ -80,7 +80,7 @@ A single command gives a live view of the collective knowledge base: total memor
   "mcpServers": {
     "hive-mind": {
       "command": "npx",
-      "args": ["-y", "hive-mind"],
+      "args": ["-y", "@adel13/hive-mind"],
       "env": {
         "HIVEMIND_COMPANY": "my-project",
         "HIVEMIND_AGENT": "Agent-Frontend"
@@ -97,7 +97,7 @@ A single command gives a live view of the collective knowledge base: total memor
   "mcpServers": {
     "hive-mind": {
       "command": "npx",
-      "args": ["hive-mind"],
+      "args": ["@adel13/hive-mind"],
       "env": {
         "HIVEMIND_COMPANY": "my-project",
         "HIVEMIND_AGENT": "Cursor-Agent"
