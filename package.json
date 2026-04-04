@@ -1,0 +1,52 @@
+{
+  "name": "hive-mind",
+  "version": "1.0.0",
+  "description": "Multi-agent memory intelligence layer — shared knowledge, expertise tracking, and conflict detection for AI agent teams",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "hive-mind": "bin/cli.mjs"
+  },
+  "files": [
+    "dist",
+    "bin",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsx src/index.ts",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "tsc --noEmit"
+  },
+  "keywords": [
+    "mcp",
+    "memory",
+    "multi-agent",
+    "ai",
+    "hive-mind",
+    "neuromcp",
+    "paperclip"
+  ],
+  "author": "AdelElo13",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AdelElo13/hive-mind.git"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "neuromcp": "^0.4.0"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.0",
+    "@types/node": "^22.0.0",
+    "tsup": "^8.0.0",
+    "tsx": "^4.0.0",
+    "typescript": "^5.7.0",
+    "vitest": "^3.0.0"
+  }
+}
