@@ -39,6 +39,7 @@
     "node": ">=18"
   },
   "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.29.0",
     "neuromcp": "^0.4.0"
   },
   "devDependencies": {
