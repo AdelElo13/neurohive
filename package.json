@@ -1,6 +1,6 @@
 {
   "name": "neurohive",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "mcpName": "io.github.adelelo13/neurohive",
   "description": "Multi-agent memory intelligence layer — shared knowledge, expertise tracking, and conflict detection for AI agent teams",
   "type": "module",
