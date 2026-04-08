@@ -1,6 +1,6 @@
 {
   "name": "neurohive",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "mcpName": "io.github.adelelo13/neurohive",
   "description": "Multi-agent memory intelligence layer — shared knowledge, expertise tracking, and conflict detection for AI agent teams",
   "type": "module",
@@ -41,7 +41,7 @@
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.29.0",
-    "neuromcp": "^0.7.3"
+    "neuromcp": "^0.8.2"
   },
   "devDependencies": {
     "@types/better-sqlite3": "^7.6.0",
